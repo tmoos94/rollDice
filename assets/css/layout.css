@@ -1,0 +1,416 @@
+
+body{
+    position: relative;
+    font-size: 30px;
+}
+.mainswip{
+    width: 100vw;
+    height: 100vh;
+    background: #f09696;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+  }
+
+  .autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: var(--swiper-theme-color);
+    
+    fill: none;
+    stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+  }
+
+section{
+    height: 100vh;
+    width: 100vw;
+
+}
+#notice{
+    background:rgba(100, 200, 200, 0.5) ;
+}
+
+
+
+/* //////////////////////// */
+
+
+
+/* 수정전      ////////////////////////////////////////////////////////////////////////*/
+
+/* display:none */
+.tit_mob {
+    display: none;
+}
+
+.kebab_ico {
+    display: none;
+}
+
+.fixedTop {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    background: #e2c48d url(../img/icon_top.svg) no-repeat center/1.5rem;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 6;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .3s;
+    transform: translateY(3rem);
+    cursor: pointer;
+
+}
+
+header {
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    padding-top: 3.5rem;
+    transition: all .2s ease-in-out;
+    background-color: black;
+}
+
+header::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 7.7rem;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 69%, rgba(255, 255, 255, 1) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out
+}
+
+header .inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1.tit a {
+    display: block;
+    position: relative;
+    height: 4.7rem;
+    width: 23.4rem;
+}
+
+h1.tit a img {
+    width: 14rem;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+}
+
+h1.tit a img.dsk_logo_wh {
+    opacity: 1;
+}
+
+h1.tit a img.dsk_logo_bl {
+    opacity: 0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul a {
+    display: block;
+    color: #eee;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-left: 5rem;
+}
+
+.sch_ico {
+    /*
+    이거 넣으면 안보이는데 대체 왜 넣은거지...?
+    width: 2.2rem;
+    height: 2.2rem;
+    
+    이거는 원래있던 이미지인데 아이콘으로 대체함
+    background: url(../img/header_ico_sch.png) no-repeat center/contain;
+    text-indent: -999rem;
+*/
+
+}
+
+/* scrolling */
+body.scrolling .fixedTop {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.scrolling header {
+    top: 0;
+    padding: 1.5rem 0
+}
+
+body.scrolling h1.tit a img.dsk_logo_bl {
+    opacity: 1;
+}
+
+body.scrolling h1.tit a img.dsk_logo_wh {
+    opacity: 0;
+}
+
+body.scrolling nav ul a {
+    color: #000
+}
+
+body.scrolling .sch_ico {
+    background: url(../img/header_ico_sch_bl.png) no-repeat center/contain;
+}
+
+body.scrolling header::before {
+    opacity: 1;
+}
+
+/* rabbit */
+.rabbit {
+    height: 100vh;
+    background: #e2c48d url(../img/rabbit_bg.jpg) no-repeat center/cover;
+}
+
+.rabbit .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rabbit .img_wrap {
+    width: 48.8rem;
+    height: 60.9rem;
+}
+
+.rabbit .img_wrap .deco1 {
+    left: 3.2rem
+}
+
+.rabbit .img_wrap .deco2 {
+    right: 0;
+    bottom: 0;
+}
+
+.rabbit .img_wrap .deco3 {
+    left: 0;
+    bottom: -5rem;
+}
+
+.rabbit_bg {
+    position: absolute;
+    width: 100%;
+    height: 30.9rem;
+    bottom: 0;
+    background: url(../img/hero_bg.svg) repeat-x left -20rem bottom;
+}
+
+.rabbit .tit_wrap {
+    color: #fff
+}
+
+.dep1 {
+
+    padding: 12.6rem;
+    text-align: center;
+}
+
+.dep1_list {
+    display: flex;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.dep1_list li {
+    width: 24rem;
+    padding: 2rem
+}
+
+.dep1_list li+li {
+    margin-left: 5rem
+}
+
+.dep1_list .img_wrap {
+    height: 20rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.dep1_list .img_wrap img {
+    height: 100%;
+}
+
+.dep1_list .lst_tit_1 {
+    padding: 2rem 0
+}
+
+/* depth2 */
+.dep2 {
+    background: #e2c48d url(../img/dep3_bg.jpg) no-repeat center/cover;
+    padding: 11rem 0;
+    color: #fff;
+}
+
+.dep2 .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* dep3 */
+.dep3 {
+    padding: 20rem 0;
+    text-align: center;
+}
+
+.dep3_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5.5rem;
+}
+
+.dep3_list li {
+    width: calc((100% / 3) - 2rem);
+    padding: 3rem;
+    border: .1rem solid #e0e0e0;
+    border-radius: 1.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dep3_list .lst_tit_2 {
+    padding: 3rem 0 2rem
+}
+
+/* footer */
+.ftr_dep1 {
+    background-color: #f8f8f8;
+    padding: 5rem 0
+}
+
+.ftr_dep1_list {
+    display: flex;
+    max-width: 97.2rem;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.ftr_dep1_list>li>a {
+    font-size: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 2.8rem;
+    font-weight: 700;
+}
+
+.ftr_dep1_list_sub {
+    margin-top: 1.5rem;
+}
+
+.ftr_dep1_list_sub li {
+    margin-bottom: 1.3rem;
+}
+
+.ftr_dep1_list_sub li a {
+    font-size: 1.6rem;
+    color: #BFBFBF;
+    font-family: 'Inter', sans-serif;
+}
+
+.ftr_dep2 {
+    background-color: #242424;
+    padding: 2.6rem 15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ftr_dep2 img {
+
+    width: 20rem;
+}
+
+.ftr_list {
+    display: flex;
+}
+
+.ftr_list a {
+    color: #BFBFBF;
+    font-size: 1.4rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    display: block;
+    margin: 0 1.8rem
+}
+
+.ftr_icons {
+    display: flex;
+}
+
+.ftr_icons a {
+    display: flex;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: .1rem solid #c2c2c2;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.ftr_icons a img {
+    width: 2rem
+}
+
+.ftr_icons li+li>a {
+    margin-left: 1.5rem;
+}

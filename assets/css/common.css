@@ -1,0 +1,65 @@
+.rabbit_tit{
+    font-family: 'yg-jalnan';
+    font-size: 8.3rem;
+    text-transform: uppercase;
+}
+.rabbit_tit .small{
+    font-size: 6rem;
+}
+.con_txt{
+    font-weight: 200;
+    font-size: 2.3rem;
+    padding: 3rem 0;
+}
+
+a.btn {
+    display: inline-block;
+    background-color: #fff;
+    padding:1rem 4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.dep_tit{
+    font-size: 5.7rem;;
+    font-weight: 800;
+    text-transform: uppercase;
+    
+}
+.lst_tit_1{
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+.lst_tit_2{
+    font-size: 2.6rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+.lst_txt_1{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+.lst_txt_2{
+    font-size: 1.9rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+}
+
+ section , footer {
+    position: relative;
+}
+section {
+    z-index: 0;
+}
+.inner {
+    max-width: 144rem;
+    margin: auto;
+    position: relative;
+    height: 100%;
+}
+.img_wrap {
+    position: relative;
+}
+.deco{
+    position: absolute;
+}
