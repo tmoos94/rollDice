@@ -1,122 +1,248 @@
 <!DOCTYPE html>
-<!-- !표만 넣어도 자동완성 뜨지만 html5를 선호하는편 -->
 <html lang="ko">
 
 <head>
-    <title>RabbitDice</title>
+    <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- css적용 넣기 -->
+    <!-- css -->
     <link href="./assets/css/style.css" rel="stylesheet">
-    <!-- Link Swiper's CSS -->
+
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" />
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- icon -->
-    <link rel="shortcut icon" href="./assets/img/mob_logo.png">
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
 </head>
 
 <body>
+    <div id="u-skip">
+        <a href="#gnb">전체메뉴 바로가기</a>
+        <a href="#main">본문 바로가기</a>
+    </div>
 
-    <div class="wrap">
+    <div id="wrap">
+        <!-- 60px 스크롤시 .active 추가 -->
         <header id="header" class="theme-dark">
-            <div class="inner conrainer">
-                <h1 class="tit_mob">
-                    <a href="#">
-                        <img src="./assets/img/mob_logo.png" alt="logo" class="mob_logo_wh">
-                        <img src="./assets/img/mob_logo_bl.png" alt="logo" class="mob_logo_bl">
-                    </a>
+            <div class="container">
+                <h1 id="logo">
+                    <a href="#">Board Game</a>
                 </h1>
-                <h1 class="tit">
-                    <a href="#">
-                        <img src="assets/img/dsk_logo.png" alt="log" class="dsk_logo_wh">
-                        <img src="assets/img/dsk_logo_bl.png" alt="log" class="dsk_logo_bl">
-                    </a>
-                </h1>
-
-                <nav>
-                    <ul>
-                        <li><a href="#home">home</a></li>
-                        <li><a href="#service">service</a></li>
-                        <li><a href="#blog">blog</a></li>
-                        <li><a href="#4">portfolio</a></li>
-                        <li><a href="#5">contact</a></li>
-                        <li>
-                            <a href="#" class="sch_ico">
-                                <span class="material-symbols-outlined">
-                                    search
-                                </span>
-                            </a>
-
-                        </li>
-                    </ul>
-                </nav>
-                <!--menulistVar-->
-                <a href="#" class="kebab_ico">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
-                <div class="util">
-                </div>
-
-            </div>
-        </header>
-
-        <section class="rabbit sec00">
-            <div class="rabbit_bg"></div>
-            <div class="inner">
-                <div class="tit_wrap">
-                    <!-- data-aos는 애니메이션 효과를 넣는것.
-                    일단 구현부터 하고 어떻게 넣을지 생각하자.
-                    -->
-                    <h1 class="rabbit_tit">
-                        Rabbit Dice <br>
-                        Game
-                    </h1>
-                    <p class="con_txt">
-                        Enjoy wour wime. I will do the <br>
-                        hard work for you.
-                    </p>
-
-                    <a href="#" class="btn">book now</a>
-
-                    <div class="mainDown">
-                        <div class="mainDoDo">
-                            아래로 버튼? 모양만?
+                <nav id="gnb">
+                    <!-- 메뉴 활성화 checked 추가 -->
+                    <input type="checkbox" name="btnMenu" id="btnMenu" class="blind" />
+                    <label for="btnMenu" class="label-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="blind">전체메뉴 보기</span>
+                    </label>
+                    <div class="menu-wrap">
+                        <!-- <div class="m-util">
+                            <a href="#" class="active">KOR</a>
+                            <a href="#">ENG</a>
+                        </div> -->
+                        <div class="top-menu">
+                            <!-- mobile 메뉴 클릭시 .active 추가 -->
+                            <dl class="">
+                                <dt>
+                                    <a href="#">게임 소개</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">게임 가이드</a>
+                                    <a href="#">이벤트</a>
+                                    <a href="#">공지사항</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a href="#">커뮤니티</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">자유 게시판</a>
+                                    <a href="#">묻고답해요</a>
+                                    <a href="#">토론 광장</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a href="#">자료실</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">다운로드</a>
+                                    <a href="#">멀티미디어</a>
+                                    <a href="#">갤러리</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <a href="#">고객지원</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">고객센터</a>
+                                    <a href="#">보안설정</a>
+                                    <a href="#">서비스 정책</a>
+                                </dd>
+                            </dl>
                         </div>
                     </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section id="swip1">
-
-            <div class="mainswip">
-                <!-- Swiper -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
+                </nav>
+                <div class="util">
+                    <div class="lang">
+                        <a href="#" class="active">KOR</a>
+                        <a href="#">ENG</a>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                    <div class="autoplay-progress">
-                        <svg viewBox="0 0 48 48">
-                            <circle cx="24" cy="24" r="20"></circle>
-                        </svg>
-                        <span></span>
+                    <div class="search-area">
+                        <button class="btn-search">
+                            <i class="las la-search"></i>
+                            <span class="blind">검색창 열기</span>
+                        </button>
+                        <div class="layer-search dimmed">
+                            <div class="search-box">
+                                <form class="form-search">
+                                    <input type="search" name="search" id="search" class="inp-search" title="검색어를 입력하세요"
+                                        placeholder="검색어를 입력하세요" />
+                                    <button type="submit" class="btn-submit">
+                                        <i class="las la-search"></i>
+                                        <span class="blind">검색</span>
+                                    </button>
+                                </form>
+                                <button class="btn-close">
+                                    <i class="las la-times"></i>
+                                    <span class="blind">검색창 닫기</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="ad">
-            <div class="ad">
-                <div class="inner">
+        </header>
+        <div class="fixedTop"></div>
+        <div id="homeTop" class="swiper slide-intro">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <picture>
+                        <!-- desktop -->
+                        <source srcset="./assets/img/beach_bg.jpg" media="(min-width: 1280px)" />
+                        <!-- mobile & tablet -->
+                        <source srcset="./assets/img/beach_bg.jpg" />
+                        <img src="./assets/img/beach_bg.jpg" alt="beach" />
+                    </picture>
+                    <div class="slide-txt">
+                        <div class="container txt_e">
+                            <span>NEW EVENT</span>
+                            <strong>HOT SUMMER!<br />
+                                여름을 즐겨라!</strong>
+                            <p>6월부터 8월까지 특별 이벤트! 경험치도 골드도 2배!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <img src="./assets/img/newRabbit.png" alt="rabbitDice" />
+                    </picture>
+                    <div class="slide-txt">
+                        <div class="container txt_g">
+                            <span>NEW GAME</span>
+                            <strong>Rabbit Dice <br />
+                                토끼 주사위를 굴려라!</strong>
+                            <p>주사위를 굴려 함정을 피해 홈으로 도착해라!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <img src="./assets/img/book_bg.png" alt="book_bg" />
+                    </picture>
+                    <div class="slide-txt">
+                        <div class="container txt_e">
+                            <span>NEW EVENT</span>
+                            <strong>6월의 지식왕<br />
+                                추천을 노려라!</strong>
+                            <p>묻고 답해요에서 가장 많은 추천을 받으면 특별 상품 증정!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <!-- Pause/Play button -->
+            <button class="swiper-button-pause">정지</button>
+        </div>
+        <div id="main">
+            <section class="sec-type2 sec-2 bg-grey">
+                <div class="container">
+                    <h2 class="sec-title">Bord Game은 보드 게임의 집합소 입니다.</h2>
+                    <div class="sec-content">다양한 보드게임을 즐길 수 있도록 노력하겠습니다.</div>
+                </div>
+                <ul class="dep1_list">
+                    <!--이거는 미리 넣어둠. 나중에 이미지 확인하고 넣기.-->
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <a href="#">
+                            <div class="img_wrap">
+                                <img src="./assets/img/01_roll20_.png" alt="list_img">
+                            </div>
+                            <h4 class="lst_tit_1">
+                                Roll20
+                            </h4>
+                            <p class="lst_txt_1">
+                                Play games anywhere. Share them wuth anyone. With Roll20 as your virtual tabletop, your adventures are limitless.
+                            </p>
+                        </a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <a href="#">
+                            <div class="img_wrap">
+                                <img src="./assets/img/01_BGA_.jpg" alt="list_img">
+                            </div>
+                            <h4 class="lst_tit_1">
+                                BGA
+                            </h4>
+                            <p class="lst_txt_1">
+                                보드게임을 온라인으로 즐길 수 있는 세계 최고의 플랫폼입니다. 브라우저에서 수천 개의 보드게임을 무료로 즐길 수 있습니다.
+                                
+                            </p>
+                        </a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <a href="#">
+                            <div class="img_wrap">
+                                <img src="./assets/img/01_playok_.jpg" alt="list_img">
+                            </div>
+                            <h4 class="lst_tit_1">
+                                PlayOK
+                            </h4>
+                            <p class="lst_txt_1">
+                                무료 온라인 게임. Skat 플레이, 오목, 바둑, 하트, 오델로 등 온라인으로 즐기는 보드 게임
+                            </p>
+                        </a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="600">
+                        <a href="#">
+                            <div class="img_wrap">
+                                <img src="./assets/img/01_yucata_.jpg" alt="list_img">
+                            </div>
+                            <h4 class="lst_tit_1">
+                                Yucata
+                            </h4>
+                            <p class="lst_txt_1">
+                                Welcome to yucata.de, an online game portal. On this site you may play various board games against other players. The list of players continues to grow.
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+
+            </section>
+            <section class="ad_link">
+                <div class="container">
                     <div class="tit_wrap">
                         <h3 class="dep_tit">
                             Dice & Board
@@ -126,185 +252,250 @@
                             hard work for you.
                         </p>
                     </div>
-                    <a href="#" class="btn">book now</a>
+                    <a href="#" class="btn">Game Start</a>
                 </div>
+            </section>
+            <section class="sec-type1 sec-eft">
+                <div class="container">
+                    <h2 class="sec-title">게임 정보</h2>
+                    <p class="sec-txt">다양한 게임에 대한 정보를 한눈에 보여줍니다.</p>
+                    <div class="sec-content">
+                        <div class="slide-eft">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide main_lst1">
+                                        <a href="#">
+                                            <h4 class="02_tit_card">
+                                                Blue Marble
+                                            </h4>
+                                            <div class="game_line">1</div>
+                                            <p class="02_txt_card">
+                                                브루마블은 2명에서 4명까지 즐길 수 있는 게임으로, 플레이어들은 게임판 위를 돌아다니며 부동산을 사고팔고, 건물을 짓는 등의 활동을 통해 재산을 늘려 나갑니다.
+                                                
+                                                <br>
+                                                <!-- 게임설명 -->
+                                            </p>
+                                        </a>
+                                        <!-- <picture>
+                                            <img src="./assets/img/02_island.png">
+                                        </picture> -->
+                                    </div>
+                                    <div class="swiper-slide main_lst2">
+                                        <a href="#">
+                                            <h4 class="02_tit_card">
+                                                마인크래프트
+                                            </h4>
+                                            <div class="game_line">1</div>
+                                            <p class="02_txt_card">
+                                                마인크래프트는 모장 AB의 설립자 마르쿠스 페르손이 만든 샌드박스 건설 게임으로 삼차원 세상에서 다양한 블록을 놓고 부수면서 여러 구조물과 작품을 만들 수 있으며, 싱글플레이어와 멀티플레이어를 지원한다.
+                                                
+                                                <br>
+                                                <!-- 게임설명 -->
+                                            </p>
+                                        </a>
+                                        <!-- <picture>
+                                            <img src="./assets/img/02_island.png">
+                                        </picture> -->
+                                    </div>
+                                    <div class="swiper-slide main_lst3">
+                                        <a href="#">
+                                            <h4 class="02_tit_card">
+                                                포커
+                                            </h4>
+                                            <div class="game_line">1</div>
+                                            <p class="02_txt_card">
+                                                포커 게임은 세븐 포커, 바둑이, 세븐 포커 하이로우, 텍사스 홀덤의 4가지이며, 그 외에도 럭키랜드라는 별도의 공간에서 블랙잭, 룰렛, 다이사이, 빅휠, 빅팟 스크래치, 슬롯머신의 6가지의 기타 게임을 할 수 있다.
 
-            </div>
-            
-        </section>
-        <section id="notice sec02">
-            <div class="inner">
-                <div class="tit_wrap">
-                    <h3 class="dep_tit">
-                      DICE & BOARD
-                    </h3>
-                    <p class="con_txt">
-                        Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Ipsam, neque.
-                    </p>
+                                                <br>
+                                                <!-- 게임설명 -->
+                                            </p>
+                                        </a>
+                                        <!-- <picture>
+                                            <img src="./assets/img/02_island.png">
+                                        </picture> -->
+                                    </div>
+                                    <div class="swiper-slide main_lst4">
+                                        <a href="#">
+                                            <h4 class="02_tit_card">
+                                                체스
+                                            </h4>
+                                            <div class="game_line">1</div>
+                                            <p class="02_txt_card">
+                                                체스판 위에서 두 명의 선수가 자신의 기물을 정해진 규칙 아래 적절히 이동시켜 전열을 정비하다가, 상대방의 킹을 공격(체크)하여 내 기물의 공격에서 벗어날 수 없는 체크메이트 상황으로 몰아넣는 쪽이 승리하는 보드게임으로, 턴제 추상전략게임, 마인드 스포츠의 일종이다.
+
+                                                <br>
+                                                <!-- 게임설명 -->
+                                            </p>
+                                        </a>
+                                        <!-- <picture>
+                                            <img src="./assets/img/02_island.png">
+                                        </picture> -->
+                                    </div>
+                                    <div class="swiper-slide main_lst5">
+                                        <a href="#">
+                                            <h4 class="02_tit_card">
+                                                Temple Run
+                                            </h4>
+                                            <div class="game_line">1</div>
+                                            <p class="02_txt_card">
+                                                Temple Run은 Imangi Studios 에서 개발 및 배급한 무한 러너 비디오 게임 입니다. 플레이어는 고대 유물을 얻은 탐험가를 조종하고 자신을 쫓는 악마 같은 원숭이와 같은 생물에게서 도망칩니다.
+                                                <br>
+                                                <!-- 게임설명 -->
+                                            </p>
+                                        </a>
+                                        <!-- <picture>
+                                            <img src="./assets/img/02_island.png">
+                                        </picture> -->
+                                    </div>
+                                    <div class="swiper-slide main_lst6">
+                                        <a href="#">
+                                            <h4 class="02_tit_card">
+                                                원카드
+                                            </h4>
+                                            <div class="game_line">1</div>
+                                            <p class="02_txt_card">
+                                                플레이어들은 순서대로 자신의 패에서 보이게 뒤집어 놓은 카드와 동일한 숫자 또는 무늬의 카드를 뒤집은 카드 위에 계속해서 한 장씩 올려놓는다. 패를 가장 먼저 모두 소모하면 승리.
+
+                                                <br>
+                                                <!-- 게임설명 -->
+                                            </p>
+                                        </a>
+                                        <!-- <picture>
+                                            <img src="./assets/img/02_island.png">
+                                        </picture> -->
+                                    </div>
+                                </div>
+                                <!-- <div class="swiper-pagination"></div> -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
                 </div>
-                <ul class="dep3_list">
-                    <li data-aos="fade-up">
-                        <a href="#">
-                            <div class="img_wrap">
-                                <img src="img/dep3_ico_1.jpg" alt="list_img">
-                            </div>
-                            <h4 class="lst_tit_2">회원가입</h4>
-                            <p class="lst_txt_2">
-                                ENJOY WOUR WIME. I WILL DO<br>
-                                THE HARD WORK FOR YOU.
-                            </p>
-                        </a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="200">
-                        <a href="#">
-                            <div class="img_wrap">
-                                <img src="img/dep3_ico_2.jpg" alt="list_img">
-                            </div>
-                            <h4 class="lst_tit_2">게임선택</h4>
-                            <p class="lst_txt_2">
-                                ENJOY WOUR WIME. I WILL DO<br>
-                                THE HARD WORK FOR YOU.
-                            </p>
-                        </a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="400">
-                        <a href="#">
-                            <div class="img_wrap">
-                                <img src="img/dep3_ico_3.jpg" alt="list_img">
-                            </div>
-                            <h4 class="lst_tit_2">초대&공유</h4>
-                            <p class="lst_txt_2">
-                                ENJOY WOUR WIME. I WILL DO<br>
-                                THE HARD WORK FOR YOU.
-                            </p>
-                        </a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="600">
-                        <a href="#">
-                            <div class="img_wrap">
-                                <img src="img/dep3_ico_4.jpg" alt="list_img">
-                            </div>
-                            <h4 class="lst_tit_2">게임 시작</h4>
-                            <p class="lst_txt_2">
-                                ENJOY WOUR WIME. I WILL DO<br>
-                                THE HARD WORK FOR YOU.
-                            </p>
-                        </a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="800">
-                        <a href="#">
-                            <div class="img_wrap">
-                                <img src="img/dep3_ico_1.jpg" alt="list_img">
-                            </div>
-                            <h4 class="lst_tit_2">게임 만들기</h4>
-                            <p class="lst_txt_2">
-                                ENJOY WOUR WIME. I WILL DO<br>
-                                THE HARD WORK FOR YOU.
-                            </p>
-                        </a>
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="1000">
-                        <a href="#">
-                            <div class="img_wrap">
-                                <img src="img/dep3_ico_1.jpg" alt="list_img">
-                            </div>
-                            <h4 class="lst_tit_2">문의하기</h4>
-                            <p class="lst_txt_2">
-                                ENJOY WOUR WIME. I WILL DO<br>
-                                THE HARD WORK FOR YOU.
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section id="service">
+            </section>
+            <section>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
-        </section>
+            </section>
+        </div>
     </div>
 
-    
-    <footer>
-        <div class="ftr_dep1">
-            <div class="inner">
-                <ul class="ftr_dep1_list">
-                    <li>
-                        <a href="#">Product</a>
-                        <ul class="ftr_dep1_list_sub">
-                            <li><a href="#">1인 모드</a></li>
-                            <li><a href="#">2인 모드</a></li>
-                            <li><a href="#">다인 모드</a></li>
-                            <li><a href="#">새로 만들기</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">list title</a>
-                        <ul class="ftr_dep1_list_sub">
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">list title</a>
-                        <ul class="ftr_dep1_list_sub">
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">list title</a>
-                        <ul class="ftr_dep1_list_sub">
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                            <li><a href="#">list sub</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    <footer id="footer">
+        <div class="footer_cont clearfix pc-foot container">
+            <div class="footer_left">
+                <img src="./assets/img/nodata/dsk_logo_bl.png" alt="Board Game" class="foot_icon_logo" />
+                <div class="copyright_txt">
+                    <p>
+                        사업자등록번호 : 123-45-67890
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        통신판매업신고번호 :
+                        제2009-경기성남-0510호
+                    </p>
+                    <p>
+                        대표이사 : 김유원&nbsp;&nbsp;&nbsp;&nbsp;
+                        주소 : 경기도 성남시 분당구 분당내곡로 131
+                        판교테크원 타워1 13~15층, 13529
+                    </p>
+                    <p class="en">ⓒ Board Game Corp. All Rights Reserved.</p>
+                </div>
+                <div class="link_txt">
+                    <a href="/lang/ko/ethics/">게임이용등급안내</a>
+                    <a href="/lang/ko/privacy/">개인정보처리방침</a>
+                    <a href="/lang/ko/privacy/">청소년보호정책</a>
+                    <a href="/lang/ko/privacy/">윤리정책</a>
+
+                </div>
+                <div class="link_social">
+                    <ul class="clfix">
+                        <li>
+                            <a href="#" target="_blank">네이버 블로그</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">페이스북</a>
+                        </li>
+                        <li><a href="#" target="_blank">네이버TV</a></li>
+                        <li>
+                            <a href="https://www.youtube.com/" target="_blank">유튜브</a>
+                        </li>
+                        <li><a href="https://medium.com/" target="_blank">미디엄</a></li>
+                        <li>
+                            <a href="https://www.linkedin.com/" target="_blank">링크드인</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_right">
+                <div class="famliy_site">
+                    <button id="family_list_btn" type="button">관계사 바로가기</button>
+                    <ul class="clfix">
+                        <li><a href="https://www.navercorp.com" target="_blank">네이버</a></li>
+                        <li><a href="https://www.naverlabs.com" target="_blank">네이버랩스</a></li>
+                        <li><a href="https://clova.ai/ko/" target="_blank">클로바</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="ftr_dep2">
-            <h4>
-                <img src="img/dsk_logo.png" alt="logo">
-            </h4>
-            <ul class="ftr_list">
-                <li><a href="#">menu1</a></li>
-                <li><a href="#">menu2</a></li>
-                <li><a href="#">menu3</a></li>
-            </ul>
-            <ul class="ftr_icons">
-                <li><a href="#"><img src="img/footer_ico_1.png" alt="icon"></a></li>
-                <li><a href="#"><img src="img/footer_ico_2.png" alt="icon"></a></li>
-                <li><a href="#"><img src="img/footer_ico_3.png" alt="icon"></a></li>
-            </ul>
+        <div class="footer_cont clfix mo-foot">
+            <img class="logo" src="./assets/img/nodata/mob_logo.png" alt="Board Game" />
+            <div class="copyright_txt top">
+                <p class="en">ⓒ NAVER Cloud Corp. All Rights Reserved.</p>
+            </div>
+            <div class="link_social">
+                <ul class="clfix">
+                    <li><a href="https://blog.naver.com/n_cloudplatform" target="_blank">네이버 블로그</a></li>
+                    <li><a href="https://www.facebook.com/navercloudplatform/" target="_blank">페이스북</a></li>
+                    <li><a href="https://tv.naver.com/ncloud" target="_blank">네이버TV</a></li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UC2wPiIf2xSXGTJNqo8UOY9g?view_as=subscriber"
+                            target="_blank">유튜브</a>
+                    </li>
+                    <li><a href="https://medium.com/naver-cloud-platform" target="_blank">미디엄</a></li>
+                    <li><a href="https://www.linkedin.com/company/navercloud" target="_blank">링크드인</a></li>
+                </ul>
+            </div>
+            <div class="family_site">
+                <button id="foot_list_btn" type="button">관계사 바로가기</button>
+                <ul class="clfix">
+                    <li><a href="https://www.navercorp.com" target="_blank">네이버</a></li>
+                    <li><a href="https://www.naverlabs.com" target="_blank">네이버랩스</a></li>
+                    <li><a href="https://clova.ai/ko/" target="_blank">클로바</a></li>
+                </ul>
+            </div>
+            <div class="link_txt clear">
+                <a href="/lang/ko/ethics/">기업윤리 상담센터 <i></i></a>
+                <a href="/lang/ko/privacy/">개인정보 처리방침 <i></i></a>
+            </div>
+            <div class="copyright_txt bottom">
+                <p><b>사업자등록번호</b> : 123-45-67890</p>
+                <p><b>통신판매업신고번호</b> : 제2009-경기성남-0510호</p>
+                <p><b>대표이사</b> : 김유원</p>
+                <p><b>주소</b> : 경기도 성남시 분당구 분당내곡로 131 판교테크원 타워1 13~15층, 13529</p>
+            </div>
         </div>
     </footer>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-
-    <script defer src="./assets/js/comm.js"></script>
-    <script defer src="./assets/js/main.js"></script>
-    <!-- aos -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- aos 연결 -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    
-    <!-- aos -->
-     
+    <!--스크립 사용확인-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration:1000
-      });
+        AOS.init({
+            duration: 1000
+        });
     </script>
+    <script src="./assets/js/comm.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
