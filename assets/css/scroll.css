@@ -1,0 +1,39 @@
+
+/* scrolling floating button */
+
+.fixedTop {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 6;
+    border-radius: 50%;
+    background: #246beb url("../img/icon_top.svg") no-repeat center/20px;
+    opacity: 0;
+    transition: all .3s;
+    cursor: pointer;
+  }
+  
+  /* scrolling */
+  
+  body.scrolling .fixedTop {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  body.scrolling header {
+    /* padding: 1.5rem 0; */
+    top: 0;
+  }
+  
+  body.scrolling header::before {
+    opacity: 1;
+  }
+  
+  body.scrolling nav ul a {
+    color: #000;
+  }
+  #footer .foot_icon_logo{
+      height: 30px;
+  }

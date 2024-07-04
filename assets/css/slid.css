@@ -1,0 +1,377 @@
+/* 0.부터 시작하니 래빗때 좌우반전 */
+#homeTop .swiper-slide img:nth-child(1) {
+    transform: scaleX(-1);
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+  
+  @media screen and (min-width: 1280px) {
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: block;
+    }
+  }
+.swiper {
+    width: 100%;
+    /* height: 100vh; */
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  
+  }
+
+.slide-intro {
+    height: 100vh;
+    position: relative;
+  }
+  
+  .slide-intro .swiper-slide {
+    height: 100vh;
+    position: relative;
+  }
+  
+  .slide-intro .swiper-slide.swiper-slide-active .slide-txt {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  
+  .slide-intro .slide-txt {
+    position: absolute;
+    top: 45%;
+    left: 58%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: all 0.8s;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .slide-intro .slide-txt span {
+    padding: 3px 10px;
+    font-size: 0.875rem;
+    background: #246beb;
+  }
+  
+  .slide-intro .swiper-slide .txt_e span {
+    /* background: #eb2424; */
+  }
+  
+  .slide-intro .swiper-slide .txt_g span {
+    background: #eb2424;
+  
+  }
+  
+  .slide-intro .slide-txt strong {
+    display: block;
+    margin: 10px 0 15px;
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+  
+  .slide-intro .swiper-button-pause {
+    display: none;
+    position: absolute;
+    top: 86.5%;
+    left: 26%;
+    z-index: 10;
+    border-radius: 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100px;
+    /* transform: translateX(-1050px); */
+  }
+  
+  .slide-intro picture {
+    position: relative;
+    width: 100%;
+  }
+  
+  .slide-intro picture::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100vw;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* before시 처음거만 적용됨 */
+  /* .slide-intro .swiper-slide picture::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+  } */
+  .slide-intro img {
+    height: 100vh;
+  }
+  
+  .slide-intro .swiper-button-prev,
+  .slide-intro .swiper-button-next {
+    top: auto;
+    left: 50%;
+    bottom: 90px;
+  }
+  
+  .slide-intro .swiper-button-prev:hover::before,
+  .slide-intro .swiper-button-next:hover::before {
+    color: #003675;
+  }
+  
+  .slide-intro .swiper-button-prev::before,
+  .slide-intro .swiper-button-next::before {
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  
+  .slide-intro .swiper-button-prev::after,
+  .slide-intro .swiper-button-next::after {
+    display: none;
+  }
+  
+  .slide-intro .swiper-button-prev {
+    transform: translateX(-600px);
+  }
+  
+  .slide-intro .swiper-button-prev::before {
+    content: "\f060";
+  }
+  
+  .slide-intro .swiper-button-next {
+    transform: translateX(-530px);
+  }
+  
+  .slide-intro .swiper-button-next::before {
+    content: "\f061";
+  }
+  
+  .slide-intro .swiper-pagination {
+    width: 70px;
+    top: auto;
+    left: 50%;
+    bottom: 86px;
+    transform: translateX(-470px);
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  .slide-intro .swiper-pagination span {
+    font-weight: bold;
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .slide-intro .swiper-button-pause {
+      display: block;
+    }
+  
+    .slide-intro .slide-txt {
+      width: 100%;
+      text-align: left;
+    }
+  
+    .slide-intro .slide-txt span {
+      font-size: 1.2rem;
+    }
+  
+    .slide-intro .slide-txt strong {
+      margin-bottom: 30px;
+      font-size: 4rem;
+    }
+  
+    .slide-intro .slide-txt p {
+      font-size: 1.5rem;
+    }
+  
+    .slide-intro img {
+      /* height: 820px; */
+      /* 왜 이래둔거? */
+    }
+  }
+  
+  .sec-eft {
+    background-color: #f8f8f8;
+    overflow: hidden;
+  }
+  
+  .slide-eft {
+    position: relative;
+  }
+  
+  .slide-eft .swiper {
+    overflow: visible;
+    width: 85%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .slide-eft .swiper-slide {
+    width: 500px;
+    height: 400px;
+    background: #f8f8f8;
+    border-radius: 20px;
+    
+  }
+  
+  .slide-eft .swiper-slide img {
+    border-radius: 20px;
+  }
+  
+  
+  .slide-eft .swiper-button-prev,
+  .slide-eft .swiper-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    background: rgba(36, 107, 235, 0.2);
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+  
+  .slide-eft .swiper-button-prev:hover,
+  .slide-eft .swiper-button-next:hover {
+    border: 3px solid #246beb;
+    background: #fff;
+  }
+  
+  .slide-eft .swiper-button-prev::after,
+  .slide-eft .swiper-button-next::after {
+    transform: scale(0.8);
+  }
+  
+  .slide-eft .swiper-button-prev {
+    left: -100px;
+  }
+  
+  .slide-eft .swiper-button-next {
+    right: -100px;
+  }
+  
+  /*# sourceMappingURL=styles.css.map */
+
+  
+
+.sec-content .swiper-wrapper .swiper-slide::before {
+
+  width: 100%;
+  height: 20%;
+  content: "";
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+  transition: all .3s;
+}
+
+.sec-content .swiper-wrapper .main_lst1 {
+  background: url("../img/02_dice.jpg") no-repeat center/cover;
+}
+
+.sec-content .swiper-wrapper .main_lst2 {
+  background: url("../img/02_island.png") no-repeat center/cover;
+}
+
+.sec-content .swiper-wrapper .main_lst3 {
+  background: url("../img/02_pokerr.jpg") no-repeat center/cover;
+}
+
+.sec-content .swiper-wrapper .main_lst4 {
+  background: url("../img/02_chess.jpg") no-repeat center/cover;
+}
+
+.sec-content .swiper-wrapper .main_lst5 {
+  background: url("../img/02_junggle.jpg") no-repeat center/cover;
+}
+
+.sec-content .swiper-wrapper .main_lst6 {
+  background: url("../img/02_card.jpg") no-repeat center/cover;
+}
+
+.sec-content .swiper-slide a {
+  padding: 3rem;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+}
+
+.sec-content .swiper-slide a .game_line {
+
+  width: 13.5rem;
+  height: 1px;
+  background-color: #fff;
+  text-indent: -999rem;
+}
+
+.sec-content .swiper-slide a h4 {
+  position: relative;
+  top: 0;
+  z-index: 2;
+  transition: all .3s;
+  transform: translateY(300px);
+}
+
+.sec-content .swiper-slide a .game_line,
+.sec-content .swiper-slide a p {
+  margin-top: 1rem;
+  opacity: 0;
+  position: relative;
+  transition: all .3s;
+  transform: translateY(13rem);
+  z-index: 20;
+
+}
+
+.sec-content .swiper-wrapper .swiper-slide:hover:before {
+  height: 100%;
+
+  border-radius: 20px;
+}
+
+.sec-content .swiper-slide:hover a h4 {
+  transform: translateY(0);
+  top: 0;
+}
+
+.sec-content .swiper-slide:hover a .game_line,
+.sec-content .swiper-slide:hover a p {
+  opacity: 1;
+  transform: translateY(0);
+}
+

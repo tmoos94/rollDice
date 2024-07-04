@@ -1,0 +1,196 @@
+
+/* home_footer */
+footer {
+    background: #f9f9f9;
+    bottom: 0;
+  }
+  
+  footer .footer_cont {
+    /* 왜 auto 를 붙여? */
+    margin: 0 auto 0;
+    max-width: 1476px;
+    position: relative;
+    padding: 50px 90px;
+  }
+  
+  footer .footer_cont.mo-foot {
+    display: none;
+  }
+  
+  footer .footer_cont .footer_left {
+    width: calc(100% - 156px);
+    float: left;
+    text-align: left;
+  }
+  
+  footer .footer_cont .footer_left img {
+    width: 180px;
+  }
+  
+  footer .footer_cont .footer_left .copyright_txt {
+    margin: 36px 0 23px;
+  }
+  
+  footer .footer_cont .footer_left .copyright_txt p {
+    font-size: 12px;
+    line-height: 20px;
+    color: #999;
+    font-weight: 700;
+  }
+  
+  footer .footer_cont .footer_left .copyright_txt p.en {
+    margin-top: 4px;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+  
+  footer .footer_cont .footer_left .link_txt {
+    display: inline-block;
+    margin-right: 9%;
+    margin-bottom: 10px;
+  }
+  
+  footer .footer_cont .footer_left .link_txt a {
+    font-size: 14px;
+    line-height: 1;
+    color: #999;
+    display: inline-block;
+    margin-left: 19px;
+    font-weight: 700;
+    transition: 0.3s;
+  }
+  
+  footer .footer_cont .footer_left .link_txt a:hover {
+    color: #117ce9;
+  }
+  
+  footer .footer_cont .footer_left .link_txt a:first-child {
+    margin: 0;
+  }
+  
+  footer .footer_cont .footer_left .link_social {
+    display: inline-block;
+  }
+  
+  footer .footer_cont .footer_left .link_social ul li {
+    display: inline-block;
+    margin-left: 24px;
+    text-align: right;
+  }
+  
+  footer .footer_cont .footer_left .link_social ul li:first-child {
+    margin: 0;
+  }
+  
+  footer .footer_cont .footer_left .link_social ul li a {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    color: #aaa;
+    display: inline-block;
+    font-weight: 700;
+    transition: 0.3s;
+  }
+  
+  footer .footer_cont .footer_left .link_social ul li a:hover {
+    color: #117ce9;
+  }
+  
+  footer .footer_cont .footer_right {
+    width: auto;
+    float: right;
+    text-align: right;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site {
+    display: inline-block;
+    margin-top: -9px;
+    position: relative;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site button {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    background: #999;
+    display: inline-block;
+    padding: 0 42px 0 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site button:hover {
+    background: #000;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site button::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 13px;
+    right: 14px;
+    background: url("/static/images/footer_open.png") no-repeat center;
+    background-size: cover;
+    transition: 0.3s;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site ul {
+    display: none;
+    padding: 8px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 48px;
+    text-align: left;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site ul li {
+    position: relative;
+    padding: 6px 14px;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site ul li a {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #1e1e1e;
+    transition: 0.3s;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site ul li a:hover {
+    color: #117ce9;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site ul li a::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: url("/static/images/outlink_icon.png") no-repeat center;
+    background-size: cover;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site ul li a:hover::after {
+    opacity: 1;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site.on button {
+    background: #1e1e1e;
+  }
+  
+  footer .footer_cont .footer_right .famliy_site.on button::after {
+    transform: rotate(45deg);
+  }
