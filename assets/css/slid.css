@@ -135,8 +135,8 @@
   
   .slide-intro .swiper-button-prev,
   .slide-intro .swiper-button-next {
-    top: auto;
-    left: 50%;
+    top: 88.5%;
+    left: 51%;
     bottom: 90px;
   }
   
@@ -254,7 +254,7 @@
     height: 80px;
     margin: 0;
     background: rgba(36, 107, 235, 0.2);
-    transform: translateY(-50%);
+    /* transform: translateY(0%); */
     border-radius: 50%;
   }
   
@@ -270,11 +270,13 @@
   }
   
   .slide-eft .swiper-button-prev {
-    left: -100px;
+    top: 40%;
+    left: 100px;
   }
   
   .slide-eft .swiper-button-next {
-    right: -100px;
+    right: 100px;
+    top: 40%;
   }
   
   /*# sourceMappingURL=styles.css.map */
