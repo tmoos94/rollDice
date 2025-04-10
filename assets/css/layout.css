@@ -194,3 +194,20 @@
   margin: 20px;
   border-radius: 50px;
 }
+
+.sec-type3 .box .box-line {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: #aaa;
+  text-indent: -999rem;
+
+  
+  margin-top: 1rem;
+  /* opacity: 0; */
+  position: relative;
+  transition: all .3s;
+  /* transform: translateY(13rem); */
+  z-index: 20;
+}
